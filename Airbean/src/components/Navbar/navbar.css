@@ -1,4 +1,4 @@
-.navbar-btn {
+.navbar-nav {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 30px;
 }
 
 body {
@@ -14,4 +15,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.navbar-cont {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-cart {
+  margin: 30px;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.navbar-cart-cont {
+  cursor: pointer;
 }
