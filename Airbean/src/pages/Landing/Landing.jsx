@@ -2,6 +2,8 @@ import React from "react";
 import {useNavigate} from 'react-router-dom';
 import "./landing.css";
 
+import Navbar from "../../components/Navbar/Navbar";
+
 const Landing = (props) => {
   const {landing} = props;
   const navigate = useNavigate();
