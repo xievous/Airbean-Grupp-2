@@ -5,6 +5,8 @@ import Landing from "./pages/Landing/Landing";
 import About from "./pages/About/About";
 import Menu from "./pages/Menu/Menu";
 import Status from "./pages/Status/Status";
+import Navbar from "./components/Navbar/Navbar";
+import Modal from "./components/ModalNav/Modal";
 
 function App() {
   const router = createBrowserRouter([
@@ -24,6 +26,14 @@ function App() {
       path: "/status",
       element: <Status />,
     },
+    {
+     path:'/navbar', 
+     element: <Navbar />
+   },
+   {
+     path:'/modal', 
+     element: <Modal />
+   }
   ]);
 
   return (

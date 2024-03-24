@@ -4,9 +4,12 @@ import { useNavigate } from "react-router-dom";
 const Modal = ({ closeModal }) => {
   const navigate = useNavigate();
 
+  const handleClose = () => {
+    navigate("/");
+  };
   return (
     <div className="modal">
-      <div onClick={closeModal} className="modal-close">
+      <div onClick={handleClose} className="modal-close">
         <svg
           width="40px"
           height="40px"
@@ -50,6 +53,7 @@ const Modal = ({ closeModal }) => {
       >
         Orderstatus
       </h1>
+     
     </div>
   );
 };
