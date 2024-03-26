@@ -1,9 +1,9 @@
 import "./modalcart.css";
 
-const ModalCart = ({ closeModalCart }) => {
+const ModalCart = () => {
   return (
     <div className="modal">
-      <div onClick={closeModalCart} className="modal-close">
+      <div className="modal-close">
         <svg
           width="40px"
           height="40px"
@@ -22,7 +22,7 @@ const ModalCart = ({ closeModalCart }) => {
           ></path>
         </svg>
       </div>
-      <h1>MoDAL CART</h1>
+      <h1>placeholder for cart</h1>
     </div>
   );
 };

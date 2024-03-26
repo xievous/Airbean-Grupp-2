@@ -1,12 +1,12 @@
 import "./modal.css";
 import { useNavigate } from "react-router-dom";
 
-const Modal = ({ closeModal }) => {
+const Modal = () => {
   const navigate = useNavigate();
 
   return (
     <div className="modal">
-      <div onClick={closeModal} className="modal-close">
+      <div className="modal-close-svg">
         <svg
           width="40px"
           height="40px"
@@ -24,8 +24,9 @@ const Modal = ({ closeModal }) => {
             fill="#000000"
           ></path>
         </svg>
+        <img src="/assets" alt="" />
       </div>
-      {}
+
       <h1
         className="modal-h1"
         onClick={() => {

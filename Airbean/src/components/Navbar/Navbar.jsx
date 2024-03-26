@@ -11,24 +11,8 @@ function Navbar() {
     setIsNavModalOpen(!isNavModalOpen);
   };
 
-  const openModal = () => {
-    setIsNavModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsNavModalOpen(false);
-  };
-
   const toggleCartModal = () => {
     setIsModalCartOpen(!isModalCartOpen);
-  };
-
-  const openModalCart = () => {
-    setIsModalCartOpen(true);
-  };
-
-  const closeModalCart = () => {
-    setIsModalCartOpen(false);
   };
 
   return (
@@ -45,7 +29,7 @@ function Navbar() {
           <rect y="9" width="26" height="2" rx="1" fill="#222222" />
           <rect y="18" width="26" height="2" rx="1" fill="#222222" />
         </svg>
-        {isNavModalOpen && <Modal closeModal={closeModal} />}
+        {isNavModalOpen && <Modal />}
       </div>
       <div onClick={toggleCartModal} className="navbar-cart">
         <svg
@@ -62,7 +46,8 @@ function Navbar() {
             fill="white"
           />
         </svg>
-        {isModalCartOpen && <ModalCart closeModalCart={closeModalCart} />}
+
+        {isModalCartOpen && <ModalCart />}
       </div>
     </div>
   );
