@@ -1,7 +1,8 @@
 import React from "react";
 import "./menu.css";
 import { useState, useEffect } from 'react';
-
+import { useDispatch } from "react-redux";
+import { add } from "../../store/cartSlice";
 import Coffee_type from "../../components/Coffee-type/Coffee_type";
 import Navbar from "../../components/Navbar/Navbar";
 
@@ -20,18 +21,27 @@ const Menu = () => {
     getBeans()
   }, [])
 
+  const addToCart = (product) => {
+    dispatch(add(product));
+  };
+
   const menuComponents = beans.length > 0 ? (
     beans.map(bean => (
-      <Coffee_type
-        key={bean.id}
-        title={bean.title}
-        desc={bean.desc}
-        price={bean.price}
-      />
+      <div key={bean.id}>
+        <Coffee_type
+          title={bean.title}
+          desc={bean.desc}
+          price={bean.price}
+        />
+        <button variant="primary" onClick={() => addToCart(bean)}>
+          Add to cart
+        </button>
+      </div>
     ))
   ) : (
     <p>Loading...</p>
   );
+  
   
   return (
     <main className="menu">
