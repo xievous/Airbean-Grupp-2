@@ -9,18 +9,19 @@ const Status = () => {
 
   useEffect(() => {
     async function getOrder() {
-      const response = await fetch('https://my-json-server.typicode.com/zocom-christoffer-wallenberg/airbean/order')
+      const response = await fetch(`https://airbean-9pcyw.ondigitalocean.app/api/beans/order/status/${orderNr}`)
       const data = await response.json();
-      setOrders(data)
       console.log(data)
+      setOrders(data)
     }
 
     getOrder();
   }, [])
 
-  const statusComponents = orders.length > 0 ? (
+  const statusComponents = orders.length >= 0 ? (
     orders.map(order => (
       <StatusComponent
+        key={order.orderNr}
         eta={order.eta}
         orderNr={order.orderNr}
       />

@@ -11,7 +11,7 @@ const Menu = () => {
 
   useEffect(() => {
     async function getBeans(){
-      const response = await fetch('https://airbean-api-xjlcn.ondigitalocean.app/api/beans/')
+      const response = await fetch('https://airbean-9pcyw.ondigitalocean.app/api/beans/')
       const data = await response.json()
       console.log(data.menu)
       setBeans(data.menu)
