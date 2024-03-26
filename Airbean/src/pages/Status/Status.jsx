@@ -1,5 +1,7 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import "./status.css";
+import StatusComponent from "../../components/Status/StatusComponent";
 
 const Status = () => {
   return <div>Status</div>;
