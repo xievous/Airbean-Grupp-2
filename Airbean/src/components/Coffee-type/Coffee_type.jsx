@@ -3,8 +3,6 @@ import { useState } from "react";
 
 function Coffee_type(props) {
 
- 
-  
   return (
       <article className="product-box">
           <img src="../../assets/add.svg" alt="" className="plus" />

@@ -24,6 +24,7 @@ const Menu = () => {
 
   const addToCart = (product) => {
     dispatch(add(product));
+    console.log('product purchased')
   };
 
   const menuComponents = beans.length > 0 ? (
