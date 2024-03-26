@@ -9,6 +9,7 @@ import Navbar from "../../components/Navbar/Navbar";
 const Menu = () => {
 
   const [beans, setBeans] = useState([])
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function getBeans(){
