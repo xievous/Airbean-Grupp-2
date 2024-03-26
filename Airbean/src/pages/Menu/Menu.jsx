@@ -29,15 +29,15 @@ const Menu = () => {
 
   const menuComponents = beans.length > 0 ? (
     beans.map(bean => (
-      <div key={bean.id}>
+      <div className="menu-box" key={bean.id}>
+        <button className="buy-btn" variant="primary" onClick={() => addToCart(bean)}>
+          <img src="../../assets/add.svg" alt="" className="plus" />
+        </button>
         <Coffee_type
           title={bean.title}
           desc={bean.desc}
           price={bean.price}
         />
-        <button variant="primary" onClick={() => addToCart(bean)}>
-          Add to cart
-        </button>
       </div>
     ))
   ) : (
@@ -48,8 +48,9 @@ const Menu = () => {
   return (
     <main className="menu">
       <Navbar />
-      <div className="menu-box">Menu
+      <div className="menu-box">
         <section>
+        <h1>Meny</h1>
           {menuComponents}
         </section>
       </div>
