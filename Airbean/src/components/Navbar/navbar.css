@@ -1,12 +1,16 @@
 .navbar-nav {
+  margin: 30px;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  border: 1px solid black;
+  background-color: black;
   display: flex;
-  align-items: center;
+  flex-direction: center;
   justify-content: center;
-  margin: 30px;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 197px;
+  background-color: white;
+  border: 1px solid;
 }
 
 body {
@@ -32,8 +36,21 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  position: relative;
 }
 
 .navbar-cart-cont {
   cursor: pointer;
+}
+
+.navbar-cart:after {
+  content: attr(value);
+  font-size: 12px;
+  background: red;
+  border-radius: 50%;
+  padding: 8px;
+  left: 21px;
+  top: -13px;
+  opacity: 0.9;
+  position: absolute;
 }

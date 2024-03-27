@@ -31,7 +31,7 @@ function Navbar() {
         </svg>
         {isNavModalOpen && <Modal />}
       </div>
-      <div onClick={toggleCartModal} className="navbar-cart">
+      <div value="2" onClick={toggleCartModal} className="navbar-cart">
         <svg
           width="16"
           height="22"
@@ -54,3 +54,5 @@ function Navbar() {
 }
 
 export default Navbar;
+
+// placeholder value på cart
