@@ -40,7 +40,7 @@ const Status = () => {
       {statusComponents}
       <p>status page</p>
       <p>orderNr: {orderNr}</p>
-      <p>ETA : {eta}</p>
+      <p>ETA : {eta}mins</p>
     </div>
   );
 };

@@ -21,19 +21,26 @@ const TakeMyMoneyBtn = () => {
       },
     };
 
-    const response = await fetch(POSTURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(POST),
-    });
+    try {
+      const response = await fetch(POSTURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(POST),
+      });
 
-    const { eta, orderNr } = await response.json();
-    console.log("Response:, Eta", eta, "ordernr", orderNr);
-    navigate("/status", { state: { orderNr, eta } });
+      if (!response.ok) {
+        throw new Error("Error");
+      }
+
+      const { eta, orderNr } = await response.json();
+      console.log("Response: Eta", eta, "OrderNr", orderNr);
+      navigate("/status", { state: { orderNr, eta } });
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
-
   return <button onClick={HandleClick}>Take My Money</button>;
 };
 
