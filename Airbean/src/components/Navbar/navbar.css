@@ -55,4 +55,9 @@ body {
   top: -13px;
   opacity: 0.9;
   position: absolute;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
