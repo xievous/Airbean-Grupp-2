@@ -39,8 +39,8 @@ const Status = () => {
       <Navbar />
       {statusComponents}
       <p>status page</p>
-      <p>{orderNr}</p>
-      <p>{eta}</p>
+      <p>orderNr: {orderNr}</p>
+      <p>ETA : {eta}</p>
     </div>
   );
 };
