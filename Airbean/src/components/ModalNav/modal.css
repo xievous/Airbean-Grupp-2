@@ -27,3 +27,9 @@
   left: 5px;
   top: 5px;
 }
+
+.smaller-modal {
+  width: 85%;
+  height: 85%;
+  margin: auto;
+}

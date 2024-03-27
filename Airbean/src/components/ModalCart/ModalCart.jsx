@@ -2,8 +2,8 @@ import "./modalcart.css";
 
 const ModalCart = () => {
   return (
-    <div className="modal">
-      <div className="modal-close">
+    <div className="modal smaller-modal">
+      <div className="modal-close ">
         <svg
           width="40px"
           height="40px"
