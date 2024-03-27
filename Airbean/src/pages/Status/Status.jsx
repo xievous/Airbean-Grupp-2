@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import "./status.css";
 import Navbar from "../../components/Navbar/Navbar";
 import StatusComponent from "../../components/Status/StatusComponent";
+import { useLocation } from "react-router-dom";
 
 const Status = () => {
   const [orders, setOrders] = useState([]);
+  const { orderNr, eta } = useLocation().state;
 
   useEffect(() => {
     async function getOrder() {
@@ -37,6 +39,8 @@ const Status = () => {
       <Navbar />
       {statusComponents}
       <p>status page</p>
+      <p>{orderNr}</p>
+      <p>{eta}</p>
     </div>
   );
 };

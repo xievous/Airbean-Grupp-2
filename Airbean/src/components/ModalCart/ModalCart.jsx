@@ -2,6 +2,7 @@ import "./modalcart.css";
 import { remove } from "../../store/cartSlice";
 import Coffee_type from "../Coffee-type/Coffee_type";
 import { useSelector, useDispatch } from "react-redux";
+import TakeMyMoneyBtn from "../TakeMyMoneyBtn/TakeMyMoneyBtn";
 
 const ModalCart = () => {
   const products = useSelector((state) => state.cart);
@@ -28,6 +29,7 @@ const ModalCart = () => {
     <div className="modal smaller-modal">
       <h1>Din beställning</h1>
       {menuComponents}
+      <TakeMyMoneyBtn />
     </div>
   );
 };

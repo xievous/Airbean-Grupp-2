@@ -1,4 +1,35 @@
-body {
-  width: 100vw;
-  height: 100vh;
-}
+
+.container {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    
+  }
+  .image-container{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+   background-color:#38846D;
+   padding: 50px;
+  }
+
+  .image-container img {
+    max-width: 100%; 
+    margin: -50px; 
+  }
+ 
+@media (max-width: 768px) {
+    .container {
+      flex-direction: column; 
+      padding: 20px; 
+    }
+    
+    .image-container {
+      width: 80%;
+      max-width: 300px; 
+      height: auto; 
+      
+    }
+  }

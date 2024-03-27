@@ -25,7 +25,7 @@ const Menu = () => {
 
   const addToCart = (product) => {
     dispatch(add(product));
-    console.log("product purchased");
+    console.log("product purchased" + JSON.stringify(product));
   };
 
   const menuComponents =
