@@ -1,30 +1,31 @@
 import React from "react";
 import "./menu.css";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { add } from "../../store/cartSlice";
 import Coffee_type from "../../components/Coffee-type/Coffee_type";
 import Navbar from "../../components/Navbar/Navbar";
 
 const Menu = () => {
-
-  const [beans, setBeans] = useState([])
+  const [beans, setBeans] = useState([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    async function getBeans(){
-      const response = await fetch('https://airbean-9pcyw.ondigitalocean.app/api/beans/')
-      const data = await response.json()
-      console.log(data.menu)
-      setBeans(data.menu)
+    async function getBeans() {
+      const response = await fetch(
+        "https://airbean-9pcyw.ondigitalocean.app/api/beans/"
+      );
+      const data = await response.json();
+      console.log(data.menu);
+      setBeans(data.menu);
     }
 
-    getBeans()
-  }, [])
+    getBeans();
+  }, []);
 
   const addToCart = (product) => {
     dispatch(add(product));
-    console.log('product purchased')
+    console.log("product purchased");
   };
 
   const menuComponents = beans.length > 0 ? (
@@ -55,8 +56,7 @@ const Menu = () => {
         </section>
       </div>
     </main>
-      
-  )
+  );
 };
 
 export default Menu;
