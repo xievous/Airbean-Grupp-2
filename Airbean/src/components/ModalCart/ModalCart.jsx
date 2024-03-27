@@ -18,7 +18,7 @@ const ModalCart = () => {
         className="buy-btn"
         onClick={() => removeFromCart(bean.id)}
       >
-        remove button
+        remove
       </button>
       <Coffee_type title={bean.title} desc={bean.desc} price={bean.price} />
     </div>
