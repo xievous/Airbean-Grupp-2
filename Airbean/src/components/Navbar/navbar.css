@@ -11,6 +11,7 @@
   margin-right: 197px;
   background-color: white;
   border: 1px solid;
+  cursor: pointer;
 }
 
 body {
@@ -37,6 +38,7 @@ body {
   align-items: center;
   border-radius: 50%;
   position: relative;
+  cursor: pointer;
 }
 
 .navbar-cart-cont {

@@ -1,28 +1,33 @@
 import "./modalcart.css";
+import { remove } from "../../store/cartSlice";
+import Coffee_type from "../Coffee-type/Coffee_type";
+import { useSelector, useDispatch } from "react-redux";
 
 const ModalCart = () => {
+  const products = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+
+  const removeFromCart = (id) => {
+    dispatch(remove(id));
+  };
+
+  const menuComponents = products.map((bean) => (
+    <div className="menu-box" key={bean.id}>
+      <button
+        style={{ backgroundColor: "red" }}
+        className="buy-btn"
+        onClick={() => removeFromCart(bean.id)}
+      >
+        remove button
+      </button>
+      <Coffee_type title={bean.title} desc={bean.desc} price={bean.price} />
+    </div>
+  ));
+
   return (
     <div className="modal smaller-modal">
-      <div className="modal-close ">
-        <svg
-          width="40px"
-          height="40px"
-          viewBox="0 0 32 32"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="icomoon-ignore"></g>
-          <path
-            d="M6.576 6.576c-5.205 5.205-5.205 13.643 0 18.849s13.643 5.205 18.849-0c5.206-5.206 5.206-13.643 0-18.849s-13.643-5.205-18.849 0zM24.67 24.67c-4.781 4.781-12.56 4.781-17.341 0s-4.781-12.56 0-17.341c4.781-4.781 12.56-4.781 17.341 0s4.78 12.56-0 17.341z"
-            fill="#000000"
-          ></path>
-          <path
-            d="M10.722 9.969l-0.754 0.754 5.278 5.278-5.253 5.253 0.754 0.754 5.253-5.253 5.253 5.253 0.754-0.754-5.253-5.253 5.278-5.278-0.754-0.754-5.278 5.278z"
-            fill="#000000"
-          ></path>
-        </svg>
-      </div>
-      <h1>placeholder for cart</h1>
+      <h1>Din beställning</h1>
+      {menuComponents}
     </div>
   );
 };

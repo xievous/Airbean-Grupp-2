@@ -32,13 +32,12 @@
   width: 317px;
   height: 652px;
   margin: auto;
-  margin-top: auto;
-  margin-top: auto;
-  margin-top: auto;
   margin-top: 81px;
   position: absolute;
   left: -679%;
   top: -54%;
+  background-color: white;
+  color: black;
 }
 
 .smaller-modal:before {
@@ -49,7 +48,7 @@
   border-left: 13px solid transparent;
   border-right: 13px solid transparent;
   border-top: 9px solid transparent;
-  border-bottom: 10px solid black;
+  border-bottom: 10px solid white;
   right: 18px;
   top: -19px;
 }
