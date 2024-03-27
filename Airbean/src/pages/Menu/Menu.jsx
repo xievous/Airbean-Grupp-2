@@ -32,11 +32,7 @@ const Menu = () => {
     beans.length > 0 ? (
       beans.map((bean) => (
         <div className="menu-box" key={bean.id}>
-          <button
-            className="buy-btn"
-            variant="primary"
-            onClick={() => addToCart(bean)}
-          >
+          <button className="buy-btn" onClick={() => addToCart(bean)}>
             <img src="../../assets/add.svg" alt="" className="plus" />
           </button>
           <Coffee_type title={bean.title} desc={bean.desc} price={bean.price} />
