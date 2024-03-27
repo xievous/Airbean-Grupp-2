@@ -2,33 +2,19 @@ import "./navbar.css";
 import { useState } from "react";
 import Modal from "../ModalNav/Modal";
 import ModalCart from "../ModalCart/ModalCart";
+import { useSelector } from "react-redux";
 
 function Navbar() {
   const [isNavModalOpen, setIsNavModalOpen] = useState(false);
   const [isModalCartOpen, setIsModalCartOpen] = useState(false);
+  const products = useSelector((state) => state.cart);
 
   const toggleModal = () => {
     setIsNavModalOpen(!isNavModalOpen);
   };
 
-  const openModal = () => {
-    setIsNavModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsNavModalOpen(false);
-  };
-
   const toggleCartModal = () => {
     setIsModalCartOpen(!isModalCartOpen);
-  };
-
-  const openModalCart = () => {
-    setIsModalCartOpen(true);
-  };
-
-  const closeModalCart = () => {
-    setIsModalCartOpen(false);
   };
 
   return (
@@ -45,9 +31,13 @@ function Navbar() {
           <rect y="9" width="26" height="2" rx="1" fill="#222222" />
           <rect y="18" width="26" height="2" rx="1" fill="#222222" />
         </svg>
-        {isNavModalOpen && <Modal closeModal={closeModal} />}
+        {isNavModalOpen && <Modal />}
       </div>
-      <div onClick={toggleCartModal} className="navbar-cart">
+      <div
+        value={products.length}
+        onClick={toggleCartModal}
+        className="navbar-cart"
+      >
         <svg
           width="16"
           height="22"
@@ -62,10 +52,13 @@ function Navbar() {
             fill="white"
           />
         </svg>
-        {isModalCartOpen && <ModalCart closeModalCart={closeModalCart} />}
+
+        {isModalCartOpen && <ModalCart />}
       </div>
     </div>
   );
 }
 
 export default Navbar;
+
+// placeholder value på cart

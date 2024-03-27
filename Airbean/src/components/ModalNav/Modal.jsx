@@ -1,7 +1,7 @@
 import "./modal.css";
 import { useNavigate } from "react-router-dom";
 
-const Modal = ({ closeModal }) => {
+const Modal = () => {
   const navigate = useNavigate();
 
   const handleClose = () => {
@@ -27,8 +27,9 @@ const Modal = ({ closeModal }) => {
             fill="#000000"
           ></path>
         </svg>
+        <img src="/assets" alt="" />
       </div>
-      {}
+
       <h1
         className="modal-h1"
         onClick={() => {
