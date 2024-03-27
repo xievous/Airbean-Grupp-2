@@ -1,0 +1,20 @@
+body {
+  background-color: #f3e4e1;
+  width: 375px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: sans-serif;
+}
+
+.card img {
+  width: 74px;
+  height: 74px;
+  border-radius: 50px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

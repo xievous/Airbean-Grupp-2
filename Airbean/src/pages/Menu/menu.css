@@ -1,0 +1,75 @@
+body {
+    margin: 0 auto;
+    background-color: white;
+}
+
+h1 {
+    text-align: center;
+    font-size: 42px;
+}
+
+.menu {
+    width: 375px;
+    height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #F3E4E1;
+}
+
+.product-box {
+    display: flex;
+    justify-content: space-between;
+    width: 311px;
+    height: 64px;
+    align-self: center;
+
+    .title-box {
+        line-height: 0.6;
+        margin-right: auto;
+        margin-left: auto;
+        
+        h2 {
+            font-size: px;
+            font-weight: 700;
+        }
+
+        .title-box:nth-child(2) h2 { /* gör ingenting, kommer fixa sen */
+            font-size: 80px;
+        } 
+
+        p {
+            font-size: 12px;
+            font-weight: 400;
+        }
+    }
+
+    .price {
+        font-size: 23px;
+        font-weight: 700;
+        align-self: center;
+    }
+}
+
+.buy-btn {
+    border: none;
+    border-radius: 100px;
+    background-color: black;
+    width: 32px;
+    height: 32px;
+    align-self: center;
+    cursor: pointer;
+
+    .plus {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+.menu-box {
+    display: flex;
+    justify-content: space-evenly;
+    width: 311px;
+    height: 64px;
+    margin-left: auto;
+    margin-right: auto;
+}
