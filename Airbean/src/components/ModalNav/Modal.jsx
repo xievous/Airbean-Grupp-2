@@ -1,8 +1,10 @@
 import "./modal.css";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Modal = () => {
   const navigate = useNavigate();
+  const { orderNr, eta } = useLocation().state;
 
   return (
     <div className="modal">
@@ -30,7 +32,7 @@ const Modal = () => {
       <h1
         className="modal-h1"
         onClick={() => {
-          navigate("/menu");
+          navigate("/menu", { state: { orderNr, eta } });
         }}
       >
         Meny
@@ -38,7 +40,7 @@ const Modal = () => {
       <h1
         className="modal-h1"
         onClick={() => {
-          navigate("/about");
+          navigate("/about", { state: { orderNr, eta } });
         }}
       >
         Vårt kaffe
@@ -46,7 +48,7 @@ const Modal = () => {
       <h1
         className="modal-h1"
         onClick={() => {
-          navigate("/status");
+          navigate("/status", { state: { orderNr, eta } });
         }}
       >
         Orderstatus
