@@ -25,33 +25,29 @@ const Menu = () => {
 
   const addToCart = (product) => {
     dispatch(add(product));
-    console.log("product purchased");
+    console.log("product purchased" + JSON.stringify(product));
   };
 
-  const menuComponents = beans.length > 0 ? (
-    beans.map(bean => (
-      <div className="menu-box" key={bean.id}>
-        <button className="buy-btn" variant="primary" onClick={() => addToCart(bean)}>
-          <img src="../../assets/add.svg" alt="" className="plus" />
-        </button>
-        <Coffee_type
-          title={bean.title}
-          desc={bean.desc}
-          price={bean.price}
-        />
-      </div>
-    ))
-  ) : (
-    <p>Loading...</p>
-  );
-  
-  
+  const menuComponents =
+    beans.length > 0 ? (
+      beans.map((bean) => (
+        <div className="menu-box" key={bean.id}>
+          <button className="buy-btn" onClick={() => addToCart(bean)}>
+            <img src="../../assets/add.svg" alt="" className="plus" />
+          </button>
+          <Coffee_type title={bean.title} desc={bean.desc} price={bean.price} />
+        </div>
+      ))
+    ) : (
+      <p>Loading...</p>
+    );
+
   return (
     <main className="menu">
       <Navbar />
       <div className="menu-box">
         <section>
-        <h1>Meny</h1>
+          <h1>Meny</h1>
           {menuComponents}
         </section>
       </div>

@@ -1,15 +1,14 @@
 import "./modal.css";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-const Modal = ({ closeModal }) => {
+const Modal = () => {
   const navigate = useNavigate();
+  const { orderNr, eta } = useLocation().state;
 
-  const handleClose = () => {
-    navigate("/");
-  };
   return (
     <div className="modal">
-      <div onClick={handleClose} className="modal-close">
+      <div className="modal-close">
         <svg
           width="40px"
           height="40px"
@@ -27,12 +26,13 @@ const Modal = ({ closeModal }) => {
             fill="#000000"
           ></path>
         </svg>
+        <img src="/assets" alt="" />
       </div>
-      {}
+
       <h1
         className="modal-h1"
         onClick={() => {
-          navigate("/menu");
+          navigate("/menu", { state: { orderNr, eta } });
         }}
       >
         Meny
@@ -40,7 +40,7 @@ const Modal = ({ closeModal }) => {
       <h1
         className="modal-h1"
         onClick={() => {
-          navigate("/about");
+          navigate("/about", { state: { orderNr, eta } });
         }}
       >
         Vårt kaffe
@@ -48,12 +48,11 @@ const Modal = ({ closeModal }) => {
       <h1
         className="modal-h1"
         onClick={() => {
-          navigate("/status");
+          navigate("/status", { state: { orderNr, eta } });
         }}
       >
         Orderstatus
       </h1>
-     
     </div>
   );
 };
